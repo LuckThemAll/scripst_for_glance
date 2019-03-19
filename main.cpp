@@ -45,14 +45,17 @@ int main(int argc, char *argv[]) {
                                                                                    << res[2] <<", "
                                                                                    << res[3] << ")\n";
         }
-        if (output_type == "VECTOR_POINTS"){
-            std::cout << "TYPE=VECTOR COLOR=12 WIDTH=2 END_CAP=NO_ANCHOR GEO=(" << res[0] << ", "
-                                                                                << res[1] << " "
-                                                                                << res[2] <<", "
-                                                                                << res[3] << ")\n";
-            std::cout << "TYPE=POINT COLOR=10 GEO=(" << res[0] << ", " << res[1] <<") WIDTH=10\n";
-            std::cout << "TYPE=POINT COLOR=14 GEO=(" << res[2] << ", " << res[3] <<") WIDTH=10\n\n";
-        }
+        else
+            if (output_type == "VECTOR_POINTS"){
+                std::cout << "TYPE=VECTOR COLOR=12 WIDTH=2 END_CAP=NO_ANCHOR GEO=(" << res[0] << ", "
+                                                                                    << res[1] << " "
+                                                                                    << res[2] <<", "
+                                                                                    << res[3] << ")\n";
+                std::cout << "TYPE=POINT COLOR=10 GEO=(" << res[0] << ", " << res[1] <<") WIDTH=10\n";
+                std::cout << "TYPE=POINT COLOR=14 GEO=(" << res[2] << ", " << res[3] <<") WIDTH=10\n\n";
+            }
+            else
+                std::cout << "Invalid format of data";
         res.clear();
     }
     return 0;
